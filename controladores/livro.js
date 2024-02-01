@@ -1,8 +1,10 @@
-// controladores > livro.js
+const { getTodosLivros } = require("../servicos/livro")
+
 
 function getLivros(req, res) {
     try {
-        res.send('Olá mundo da Alura do Brasil!')
+        const livros = getTodosLivros()
+        res.send(livros)
     } catch (error) {
         res.status(500)
         res.send(error.message)
